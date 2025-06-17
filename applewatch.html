@@ -30,9 +30,13 @@
  
  .menubar {
 	background-color: white;
-	padding:10px 0;
+	padding: 5px 0;
+	width:50%;
 	font-family: Rubik;
-	float:left;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:100px;
+
 }
 
 
@@ -46,7 +50,9 @@
 .menubar a:visited {
 	color:black;
 	text-decoration:none;
-	font-size:100%
+	font-size:100%;
+	margin-top: 20px;
+	
 }
 
 .menuitem {
@@ -55,12 +61,14 @@
 }
 
 .store {
+	position: absolute;
+	top: 0px;
+	left:100px;
 	background-color: white;
 	padding:10px 0;
 	font-family: Rubik;
 	font-weight:900;
 	float:left;
-	margin-right: 10px;
 }
 
 .store a:link {
@@ -76,9 +84,8 @@
 }
 
 .menu {
-	max-width: 950px;
-	margin-left:auto;
-	margin-right:auto;
+	
+	width:100%;
 }
 
 .cart {
@@ -93,7 +100,8 @@
 .product {
 	text-align: center;
 	margin: 10px;
-  margin-top: 20px;;
+ /* margin-top: 20px;*/
+}
  
 .product img {
 	width: 100px;
@@ -200,12 +208,12 @@
 </head>
 <body>
  
- 
-<div class="menu">
 	<div class = "store">
 		<a href ="#"><img src="logo/logo white background.png" style="width: 200px;">
 		</a>
 	</div>
+<div class="menu">
+	
 	<div class="menubar">
 		<a href ="#" class="menuitem">Home</a>
 		<a href ="#" class="menuitem">Product</a>
@@ -220,7 +228,7 @@
  
  
  
-  <div class="product" style="max-width: 600px; margin: 30px auto; border: 1px solid #ddd; border-radius: 10px; padding: 20px; font-family: sans-serif; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  <div class="product" style="max-width: 600px;margin-left: auto;margin-right:auto;margin-top:20px; border: 1px solid #ddd; border-radius: 10px; padding: 20px; font-family: sans-serif; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
     <h2 style="text-align:center;">Smart Watch R60</h2>
     <p style="text-align:center; color: gray;">1.96” AMOLED | 120+ Workouts | 25 Days Battery</p>
   <div class="slideshow-container">

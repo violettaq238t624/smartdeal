@@ -4,6 +4,88 @@
 	<link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16"/>
 <head>
     <style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.rubik {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+ 
+ 
+ h4 {
+	margin: 20px 0;
+ 
+ }
+
+ .menubar {
+	background-color: white;
+	padding: 5px 0;
+	width:50%;
+	font-family: Rubik;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:100px;
+ }
+ 
+
+
+
+.menubar a:link {
+	color:black;
+	text-decoration:none;
+	font-size:100%
+}
+
+.menubar a:visited {
+	color:black;
+	text-decoration:none;
+	font-size:100%;
+	margin-top: 20px;
+	
+}
+
+.menuitem {
+	margin-left:50px;
+	margin-right:20px;
+}
+
+.store {
+	position: absolute;
+	top: 0px;
+	left:100px;
+	background-color: white;
+	padding:10px 0;
+	font-family: Rubik;
+	font-weight:900;
+	float:left;
+}
+
+.store a:link {
+	color:black;
+	text-decoration:none;
+	font-size:200%
+}
+
+.store a:visited{
+	color:black;
+	text-decoration:none;
+	font-size:200%
+}
+
+.menu {
+	width: 100%;
+}
+
+.cart {
+	background-color: white;
+	border: none;
+	color: black;
+	padding: 12px 16px;
+	font-size: 16px;
+	cursor: pointer;
+}
 
 .product {
 	text-align: center;
@@ -37,7 +119,7 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 10%;
+  top: 240px;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -50,6 +132,12 @@
 }
 
 /* Position the "next button" to the right */
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
@@ -109,29 +197,55 @@
 </style>
 </head>
 <body>
-  <div class="product" style="max-width: 600px; margin: 30px auto; border: 1px solid #ddd; border-radius: 10px; padding: 20px; font-family: sans-serif; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <h2 style="text-align:center;">Smart Watch R60</h2>
-    <p style="text-align:center; color: gray;">1.96” AMOLED | 120+ Workouts | 25 Days Battery</p>
-  <div class="slideshow-container">
+ 
+ 
+	<div class = "store">
+		<a href ="#"><img src="logo/logo white background.png" style="width: 200px;">
+		</a>
+	</div>
+<div class="menu">
+	
+	<div class="menubar">
+		<a href ="#" class="menuitem">Home</a>
+		<a href ="#" class="menuitem">Product</a>
+		<a href ="#" class="menuitem">About</a>
+		<a href ="#" class="menuitem">Contact</a>
+		
+		</div>
+		
+		
+</div>	
+	
+	
+		
+  
+	<div class="product" style="max-width: 600px;margin-left: auto;margin-right:auto;margin-top:20px; border: 1px solid #ddd; border-radius: 10px; padding: 20px; font-family: sans-serif; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+		<h2 style="text-align:center;">Smart Watch R60</h2>
+		<p style="text-align:center; color: gray;">1.96” AMOLED | 120+ Workouts | 25 Days Battery</p>
+	<div class="slideshow-container">
 
 		<!-- Full-width images with number and caption text -->
 		<div class="mySlides fade">
 		  <div class="numbertext">1 / 5</div>
-		  <img src="IMG_5472.jpg" style="width:100%">
+		  <img src="images/sunsetlamp/IMG_5472.jpg" style="width:100%">
 		</div>
 	  
 		<div class="mySlides fade">
-		  <div class="numbertext">2 / 4</div>
-		  <img src="IMG_5476.jpg" style="width:100%">
+		  <div class="numbertext">2 / 5</div>
+		  <img src="images/sunsetlamp/IMG_5476.jpg" style="width:100%">
 		</div>
 	  
 		<div class="mySlides fade">
-		  <div class="numbertext">3/ 4</div>
-		  <img src="IMG_5473.jpg" style="width:100%">
+		  <div class="numbertext">3 / 5</div>
+		  <img src="images/sunsetlamp/IMG_5473.jpg" style="width:100%">
 		</div>
 		<div class="mySlides fade">
-			<div class="numbertext">4/ 4</div>
-			<img src="IMG_5474.jpg" style="width:100%">
+			<div class="numbertext">4 / 5</div>
+			<img src="images/sunsetlamp/IMG_5474.jpg" style="width:100%">
+		<div class="mySlides fade">
+				<div class="numbertext">5 / 5</div>
+				<img src="images/sunsetlamp/IMG_5475.jpg" style="width:100%">
+			  </div>
 		</div>
 
 	
@@ -151,6 +265,12 @@
 		<span class="dot" onclick="currentSlide(5)"></span>
 	  </div>
 
+
+	<!--Buy Now Button-->
+	  <div style="text-align:center; margin-top: 10px;">
+		<a href="https://www.instagram.com/yourstore" target="_blank" style="background-color:#d75804; color:white; padding:12px 25px; text-decoration:none; border-radius:5px; font-weight:bold;">Buy Now</a>
+	  </div>
+	  </div>
 
 
 <script>
