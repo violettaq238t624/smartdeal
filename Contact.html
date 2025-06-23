@@ -1,0 +1,264 @@
+<html>
+  <title> SmartDeal</title>
+	
+	<link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16"/>
+<head>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+.rubik {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+ 
+ 
+ h4 {
+	margin: 20px 0;
+ 
+ }
+
+ .menubar {
+	background-color: white;
+	padding: 5px 0;
+	width:50%;
+	font-family: Rubik;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:100px;
+ }
+ 
+
+
+
+.menubar a:link {
+	color:black;
+	text-decoration:none;
+	font-size:100%
+}
+
+.menubar a:visited {
+	color:black;
+	text-decoration:none;
+	font-size:100%;
+	margin-top: 20px;
+	
+}
+
+.menuitem {
+	margin-left:50px;
+	margin-right:20px;
+}
+
+.store {
+	position: absolute;
+	top: 0px;
+	left:100px;
+	background-color: white;
+	padding:10px 0;
+	font-family: Rubik;
+	font-weight:900;
+	float:left;
+}
+
+.store a:link {
+	color:black;
+	text-decoration:none;
+	font-size:200%
+}
+
+.store a:visited{
+	color:black;
+	text-decoration:none;
+	font-size:200%
+}
+
+.menu {
+	width: 100%;
+}
+
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* leaves room for navbar */
+  padding: 20px;
+  
+}
+
+body {
+      font-family: sans-serif;
+      background: #ffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+        .contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* leaves room for navbar */
+    padding: 20px;
+  
+}
+    .contact-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .contact-info, .business-hours, .socials {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .none {
+        text-decoration: none;
+        color: #666;
+    }
+
+    .socials a {
+      color: #444;
+      margin: 0 5px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background: orange;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    small {
+      display: block;
+      text-align: right;
+      font-size: 12px;
+      color: #666;
+      margin-top: -10px;
+      margin-bottom: 15px;
+    }
+
+    
+
+
+    
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+</style>
+</head>
+<body>
+    <div class="menu">
+	
+        <div class="menubar">
+            <a href ="mypage.html" class="menuitem">Home</a>
+            <a href ="production.html" class="menuitem">Product</a>
+            <a href ="Aboutus.html" class="menuitem">About</a>
+            <a href ="Contact.html" class="menuitem">Contact</a>
+            
+            </div>
+            
+    
+<div class="contact-wrapper">
+   
+	<div class="contact-container">
+        <h2>Contact Us</h2>
+      
+        <div class="contact-info">
+          📧 Email: <a href="mailto:support@smartdeal.com" class="none">support@smartdeal.com</a><br>
+          ☎️ Phone: <a href="tel:+18001234567" class="none">+1 (800) 123‑4567</a>
+        </div>
+      
+        <div class="business-hours">
+          🕒 <strong>Business Hours:</strong> Monday–Friday | 9:00am – 5:00pm (PST)
+        </div>
+      
+        <form onsubmit="return showMessage();">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message..." maxlength="300" required></textarea>
+          <small id="charCount">0 / 300 characters</small>
+          <button type="submit">Send Message</button>
+        </form>
+      
+        <div class="socials">
+          <a href="https://www.instagram.com/smart_deal.1?igsh=MTRscXA1NDBqaHV0ZA%3D%3D&utm_source=qr" target="_blank">📸 Instagram</a>
+          <a href="#" target="_blank">🎵 TikTok</a>
+          <a href="#" target="_blank">📘 Facebook</a>
+        </div>
+      </div>
+    
+    <div class = "store">
+		<a href ="mypage.html"><img src="logo/logo white background.png" style="width: 200px;">
+		</a>
+	</div>
+
+	
+		
+</div>	
+
+
+<script>
+    // Show alert + clear + simulate loading
+    function showMessage() {
+      const form = document.querySelector("form");
+      const button = form.querySelector("button");
+  
+      button.disabled = true;
+      button.textContent = "Sending...";
+  
+      setTimeout(() => {
+        alert("Thank you! Your message has been sent.");
+        form.reset();
+        button.disabled = false;
+        button.textContent = "Send Message";
+        document.getElementById("charCount").textContent = "0 / 300 characters";
+      }, 1200);
+  
+      return false;
+    }
+  
+    // Live character counter
+    const textarea = document.querySelector("textarea");
+    const charCount = document.getElementById("charCount");
+  
+    textarea.addEventListener("input", () => {
+      const count = textarea.value.length;
+      charCount.textContent = `${count} / 300 characters`;
+    });
+  </script>
+  
+  </body>
+</html>
