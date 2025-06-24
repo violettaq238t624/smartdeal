@@ -286,7 +286,14 @@ background-image: url("images/led\ strip\ light/IMG7896.jpg");
 	<!--Buy Now Button-->
 	  <div style="text-align:center; margin-top: 10px;">
 		<a href="https://www.instagram.com/smart_deal.1/" target="_blank" style="background-color:#d75804; color:white; padding:12px 25px; text-decoration:none; border-radius:5px; font-weight:bold;">Buy Now</a>
-	  </div>
+		<button 
+		onclick="addToCart(this)" 
+		data-product="LED Strip Lights" 
+		data-image="images/led strip light/IMG_5477.jpg" 
+		data-price="25">
+		Add to Cart
+	  </button>
+	</div>
       <div>
         <p>Brighten up your room with these vibrant LED Strip Lights. Easy to install and fully customizable, they’re perfect for parties, gaming setups, or daily mood lighting.</p>
         <p>🎛️ Multiple colors with remote control</p>
@@ -327,6 +334,32 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
+}
+function addToCart(button) {
+  const productName = button.getAttribute("data-product");
+  const productImage = button.getAttribute("data-image");
+  const productPrice = parseFloat(button.getAttribute("data-price")); // NEW
+
+  // Get existing cart or create new
+  let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  // Add product object with name, image, and price
+  cart.push({ name: productName, image: productImage, price: productPrice });
+
+  // Save to localStorage
+  localStorage.setItem("cartItems", JSON.stringify(cart));
+
+  // Animate + color
+  button.classList.add("clicked");
+  button.style.backgroundColor = "green";  // ✅ Green effect
+  const originalText = button.textContent;
+  button.textContent = "✓ Added!";
+
+  setTimeout(() => {
+    button.classList.remove("clicked");
+    button.textContent = originalText;
+    button.style.backgroundColor = "";  // reset color
+  }, 1000);
 }
 </script>
 

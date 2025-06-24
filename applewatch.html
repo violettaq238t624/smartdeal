@@ -292,7 +292,15 @@ background-image: url("images/smart\ watch/IMG_6789.jpg");
     <!--Buy Now Button-->
     <div style="text-align:center; margin-top: 10px;">
       <a href="https://www.instagram.com/smart_deal.1?igsh=MTRscXA1NDBqaHV0ZA%3D%3D&utm_source=qr" target="_blank" style="background-color:#d75804; color:white; padding:12px 25px; text-decoration:none; border-radius:5px; font-weight:bold;">Buy Now</a>
-    </div>
+	  <button 
+	  onclick="addToCart(this)" 
+	  data-product="Smart Watch R60" 
+	  data-image="images/smart watch/IMG_5433.jpg" 
+	  data-price="50">
+	  Add to Cart
+	</button>
+	</div>
+
 	<div>
 		<p>Stay connected and track your health with the sleek and powerful Smart Watch R60. Perfect for everyday use, fitness, and notifications right on your wrist.</p>
 		<p>⌚ 1.96” AMOLED display for vibrant clarity</p>
@@ -333,6 +341,36 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+function addToCart(button) {
+  const productName = button.getAttribute("data-product");
+  const productImage = button.getAttribute("data-image");
+  const productPrice = parseFloat(button.getAttribute("data-price")); // NEW
+
+  // Get existing cart or create new
+  let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  // Add product object with name, image, and price
+  cart.push({ name: productName, image: productImage, price: productPrice });
+
+  // Save to localStorage
+  localStorage.setItem("cartItems", JSON.stringify(cart));
+
+  // Animate + color
+  button.classList.add("clicked");
+  button.style.backgroundColor = "green";  // ✅ Green effect
+  const originalText = button.textContent;
+  button.textContent = "✓ Added!";
+
+  setTimeout(() => {
+    button.classList.remove("clicked");
+    button.textContent = originalText;
+    button.style.backgroundColor = "";  // reset color
+  }, 1000);
+}
+
+
+
 </script>
 
 

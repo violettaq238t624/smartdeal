@@ -281,7 +281,17 @@ background-image: url("images/sunsetlamp/sunset_lamp_softened.png");
 	<!--Buy Now Button-->
 	  <div style="text-align:center; margin-top: 10px;">
 		<a href="https://www.instagram.com/smart_deal.1?igsh=MTRscXA1NDBqaHV0ZA%3D%3D&utm_source=qr" target="_blank" style="background-color:#d75804; color:white; padding:12px 25px; text-decoration:none; border-radius:5px; font-weight:bold;">Buy Now</a>
-	  </div>
+		<button 
+		onclick="addToCart(this)" 
+		data-product="Sunset Lamp" 
+		data-image="images/sunsetlamp/IMG_5472.jpg" 
+		data-price="20">
+		Add to Cart
+	  </button>
+	
+	</div>
+
+
 	  
 	  <div>
 		<p>Transform your space with a stunning golden hour glow — any time of day. The Sunset Lamp creates a relaxing and aesthetic vibe that’s perfect for your bedroom, living room, or even for content creation.</p>
@@ -323,6 +333,32 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
+}
+function addToCart(button) {
+  const productName = button.getAttribute("data-product");
+  const productImage = button.getAttribute("data-image");
+  const productPrice = parseFloat(button.getAttribute("data-price")); // NEW
+
+  // Get existing cart or create new
+  let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  // Add product object with name, image, and price
+  cart.push({ name: productName, image: productImage, price: productPrice });
+
+  // Save to localStorage
+  localStorage.setItem("cartItems", JSON.stringify(cart));
+
+  // Animate + color
+  button.classList.add("clicked");
+  button.style.backgroundColor = "green";  // ✅ Green effect
+  const originalText = button.textContent;
+  button.textContent = "✓ Added!";
+
+  setTimeout(() => {
+    button.classList.remove("clicked");
+    button.textContent = originalText;
+    button.style.backgroundColor = "";  // reset color
+  }, 1000);
 }
 </script>
 

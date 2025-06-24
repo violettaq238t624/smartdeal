@@ -292,7 +292,15 @@ background-image: url("images/Steel aroma diffuser/IMG5567.png");
 	<!--Buy Now Button-->
 	  <div style="text-align:center; margin-top: 10px;">
 		<a href="https://www.instagram.com/smart_deal.1?igsh=MTRscXA1NDBqaHV0ZA%3D%3D&utm_source=qr" target="_blank" style="background-color:#d75804; color:white; padding:12px 25px; text-decoration:none; border-radius:5px; font-weight:bold;">Buy Now</a>
-	  </div>
+        <button 
+        onclick="addToCart(this)" 
+        data-product="New Stainless Steel Aroma Diffuser" 
+        data-image="images/Steel aroma diffuser/IMG_5525.JPG" 
+        data-price="14.99">
+        Add to Cart
+      </button>
+    </div>
+      
      <div>
         <p>Carry calm wherever you go with the stylish Aroma Necklace. Just add a few drops of essential oil and enjoy relaxing scents all day long.</p>
         <p>🌿 Natural aromatherapy on the go</p>
@@ -300,6 +308,7 @@ background-image: url("images/Steel aroma diffuser/IMG5567.png");
         <p>🔁 Reusable felt pads for different scents</p>
         <p>🎁 Great gift for friends, family, or yourself</p>
       </div>
+
 	</div>
 
 
@@ -332,6 +341,33 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+function addToCart(button) {
+  const productName = button.getAttribute("data-product");
+  const productImage = button.getAttribute("data-image");
+  const productPrice = parseFloat(button.getAttribute("data-price")); // NEW
+
+  // Get existing cart or create new
+  let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  // Add product object with name, image, and price
+  cart.push({ name: productName, image: productImage, price: productPrice });
+
+  // Save to localStorage
+  localStorage.setItem("cartItems", JSON.stringify(cart));
+
+  // Animate + color
+  button.classList.add("clicked");
+  button.style.backgroundColor = "green";  // ✅ Green effect
+  const originalText = button.textContent;
+  button.textContent = "✓ Added!";
+
+  setTimeout(() => {
+    button.classList.remove("clicked");
+    button.textContent = originalText;
+    button.style.backgroundColor = "";  // reset color
+  }, 1000);
+}
+
 </script>
 
 
